@@ -11,10 +11,13 @@
 
 <body>
 
-    <?php
+    <form action="includes/dbh-inc.php" method="post">
+        <input type="text" name="firstname" placeholder="First Name">
+        <input type="text" name="lastname" placeholder="Last Name">
+        <input type="text" name="email" placeholder="Email">
 
-    ?>
 
+    </form>
 
 </body>
 
