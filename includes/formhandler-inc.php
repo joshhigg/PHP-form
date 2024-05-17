@@ -22,8 +22,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $pdo = null;
         $stmt = null;
 
+        // keep the user at the index.php page
         header("Location: ../index.php");
 
+        // exit
         die();
     } catch (PDOException $e) {
         // End the script and display error message
