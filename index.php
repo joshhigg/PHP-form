@@ -10,11 +10,12 @@
 </head>
 
 <body>
-
-    <form action="includes/dbh-inc.php" method="post">
-        <input type="text" name="firstname" placeholder="First Name">
-        <input type="text" name="lastname" placeholder="Last Name">
-        <input type="text" name="email" placeholder="Email">
+    <!-- Contact form to submit name and email address -->
+    <form action="includes/formhandler-inc.php" method="post">
+        First Name: <input type="text" name="first_name" placeholder="First Name"><br>
+        Last Name: <input type="text" name="last_name" placeholder="Last Name"><br>
+        Email: <input type="text" name="email" placeholder="Email"><br>
+        <button>Submit</button>
 
 
     </form>
