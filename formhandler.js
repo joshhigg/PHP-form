@@ -13,6 +13,7 @@ $(document).ready(function () {
             }
         });
 
+        // Use a regex to check the email to ensure it is in the proper format
         const regex = new RegExp('^[\\w.%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$');
 
         if (!regex.test($('#email').val())) {
@@ -33,16 +34,18 @@ $(document).ready(function () {
                 data: formData,
                 success: function () {
                     console.log('success!');
+                    // clear out form fields
+                    $('#firstName').val('');
+                    $('#lastName').val('');
+                    $('#email').val('');
+                    $('#successMessage').removeClass('hide').addClass('visible');
                 },
                 error: function () {
                     console.log('an error occured in the ajax request');
                 }
             });
-
-            // clear out form fields
-            $('#firstName').val('');
-            $('#lastName').val('');
-            $('#email').val('');
+            
         }
+        
     });
 });
