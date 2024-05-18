@@ -4,7 +4,7 @@
 $dsn = "mysql:host=localhost;dbname=contacts_db";
 // credentials
 $dbusername = "root";
-$dbpassword = "";
+$dbpassword = getenv("DATABASE_PASSWORD");
 
 try {
     // connecting to database through pdo connection

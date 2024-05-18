@@ -25,7 +25,6 @@
 </body>
 
 <!-- To do -->
-<!-- regex validation on email -->
 <!-- add .env file to secure password -->
 <!-- style -->
 

@@ -13,6 +13,14 @@ $(document).ready(function () {
             }
         });
 
+        const regex = new RegExp('^[\\w.%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$');
+
+        if (!regex.test($('#email').val())) {
+            isValid = false;
+            alert('Please enter a valid email');
+            return false;
+        }
+
         // If all inputs are there, 
         if (isValid) {
             // serialize the form data to enable it to be submitted using the AJAX request
