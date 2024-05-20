@@ -14,11 +14,19 @@ $(document).ready(function () {
         });
 
         // Use a regex to check the email to ensure it is in the proper format
-        const regex = new RegExp('^[\\w.%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$');
+        const emailRegex = new RegExp('^[\\w.%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$');
+        // Name regex allows for names to start with letters, but will allow spaces, ', and -, as long as they are followed by letters
+        const nameRegex = new RegExp("^[A-Za-z]+(([' -][A-Za-z])?[A-Za-z]*)*$");
 
-        if (!regex.test($('#email').val())) {
+        if (!emailRegex.test($('#email').val())) {
             isValid = false;
             alert('Please enter a valid email');
+            return false;
+        }
+
+        if (!nameRegex.test($('#firstName').val()) || !nameRegex.test($('#lastName').val())) {
+            isValid = false;
+            alert('Please enter a valid name');
             return false;
         }
 
