@@ -14,13 +14,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // SQL query to insert user data into users table
         $query = "INSERT INTO users (firstname, lastname, email) VALUES (?, ?, ?);";
 
-        $stmt = $pdo->prepare($query);
+        // prepare method to prepare the query to be executed
+        $statement = $pdo->prepare($query);
 
-        $stmt->execute([$first_name, $last_name, $email]);
+        // execute method to execute the query with our values
+        $statement->execute([$first_name, $last_name, $email]);
 
         // close connection and statement for best practice
         $pdo = null;
-        $stmt = null;
+        $statement = null;
 
         // keep the user at the index.php page
         header("Location: ../index.php");

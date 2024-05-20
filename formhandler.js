@@ -50,6 +50,7 @@ $(document).ready(function () {
                 },
                 error: function () {
                     console.log('an error occured in the ajax request');
+                    alert('Error submitting request');
                 }
             });
             
